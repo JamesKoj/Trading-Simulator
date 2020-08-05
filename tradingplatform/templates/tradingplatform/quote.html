@@ -1,0 +1,16 @@
+{% extends "tradingplatform/layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div id="quotetext">Enter ticker symbol (e.g. AAPL) for a stock quote:</div>
+    <form action="/quote" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Enter Ticker Symbol" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}
